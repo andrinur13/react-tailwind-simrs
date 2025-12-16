@@ -14,9 +14,9 @@ export const AuthAPI = {
 };
 
 export const PatientsAPI = {
-    getList: async (page = 1, perPage = 10, search = "") => {
+    getList: async (page = 1, limit = 30, search = "") => {
         const res = await api.get("/v2/patients", {
-            params: { page, per_page: perPage, search },
+            params: { page, limit, search },
         });
         return res.data;
     },
